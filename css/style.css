@@ -1,0 +1,39 @@
+body {
+    background-color: #e9dcdc;
+    font-size: ;
+}
+h1 {
+    font-size: 50px;
+    font-family:cursive;
+    color: rgb(168, 57, 94);
+    text-align: center;
+}
+h2 {
+    font-size: 40px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color:rgb(65, 109, 146);
+}
+h3 {
+    font-size: 30px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color:rgb(122, 65, 146);
+} 
+div {
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+img {
+    border: 5px solid rgb(251, 154, 170);
+    padding: 10px;
+    margin: 20px;
+    border-top-right-radius: 30px;
+}
+li {
+    display: inline-block;
+    margin-left: 50px;
+}
