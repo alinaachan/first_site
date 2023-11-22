@@ -1,51 +1,382 @@
 body {
+    font-family: 'Inconsolata', sans-serif;
     background-color: #fff0f0;
-    font-size: 15px;
+    font-size: 20px;
+}
+main {
+    padding: 0 10px 10px 10px;
+}
+.pets-nav, .travels-nav, .foods-nav {
+    display: none;
 }
 nav {
-    border: 2px solid palevioletred;
-    background-color: rgb(255, 254, 254);
-}
-nav > ul {
     display: flex;
-    justify-content: space-around;
+    border: 2px solid palevioletred;
+    background-image: url('../images/complete_site_bg.png');
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+nav > li {
+    display: block;
+    margin-bottom: 10px;
+    list-style-type: none;
+}
+nav a {
+    font-size: 25px;
+    text-align: center;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+ul {
+    padding-left: 10px;
 }
 li {
     margin: 10px;
 }
-/* nav a {
-    background-color: blanchedalmond;
-    padding: 5px;
-    margin: .5px
-} */
+i {
+    margin-left: 10px;
+}
+img {
+    border: 5px solid #fb9aaa;
+    border-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(36,77,88,1) 0%, rgba(251,154,170,1) 0%, rgba(97,82,193,1) 100%, rgba(169,231,247,1) 100%);
+    border-image-slice: 1;
+    padding: 10px;
+    border-radius: 30px;
+}
+img:hover {
+    opacity: 70%;
+}
+.main-pet-pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
 h1 {
     font-size: 60px;
-    font-family:monospace;
+    font-family: cursive;
     color: rgb(168, 57, 94);
     text-align: center;
 }
 h2 {
     font-size: 40px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family: sans-serif;
     color:rgb(88, 104, 223);
+    margin-top: 40px;
 }
 h3 {
+    margin-top: 15px;
     font-size: 30px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family: sans-serif;
     color:rgb(149, 42, 196);
 } 
 div {
     margin-top: 10px;
-    margin-bottom: 50px;
 }
 p {
     margin-top: 10px;
     margin-bottom: 10px;
     line-height: 1.5;
 }
-img {
-    border: 5px solid rgb(251, 154, 170);
-    padding: 10px;
-    margin: 20px;
-    border-top-right-radius: 30px;
+.skip a {
+    font-size: 17px;
+    padding: 5px;
+    background-color: rgb(234, 239, 255);
+    border: 2px solid rgb(112, 112, 216);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    -webkit-transition: top 1s ease-out;
+    transition: top 1s ease-out;
+    z-index: 1;
+    position: absolute;
+    top:-40px;
+}
+.skip a:focus {
+    top: 20px;
+}
+li a.active {
+    background-color: rgb(255, 235, 244);
+    padding: 5px;
+    text-decoration: underline;
+    font-weight: bold;
+    color:rgb(168, 57, 94)
+}
+
+.food-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+ol {
+    padding-left: 20px;
+    list-style-type: decimal;
+}
+
+:focus {
+    outline: 2px solid rgb(164, 26, 49);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 20px;
+}
+
+.container img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.container figure {
+    margin-bottom: 20px;
+}
+
+.header-animation {
+    animation-name: transition-color;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes transition-color {
+    from {
+        background-color:rgb(246, 201, 214);
+    }
+    to {
+        background-color: rgb(204, 191, 230);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .header-animation {animation: none;}
+    .gif {display: none;}
+}
+
+/* Portrait Tablet view */
+@media only screen and (min-width: 600px) {
+    .pets-nav, .travels-nav, .foods-nav {
+        display: block;
+        background-image: none;
+        border-width: 15px;
+        border-style: solid;
+        border-image-source: url('../images/complete_site_bg.png');
+        border-image-slice: 10;
+        background-color: #fff0f0;
+        margin-top: 10px;
+        text-align: left;
+        justify-content: left;
+        padding-left: 20px;
+    }
+    .pets-nav li, .travels-nav li, .foods-nav li {
+        list-style-type:decimal;
+    }
+    .pets-nav a, .travels-nav a, .foods-nav a {
+        font-size: 20px;
+    }  
+    .container {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+    .container img {
+        grid-column: 1 / -1;
+        width: 100%;
+        height: auto;
+    }
+    .container img:nth-child(1) {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    .container img:nth-child(2) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+    
+    .container img:nth-child(3) {
+        grid-column: 1;
+        grid-row: 3;
+    }
+    
+    .container img:nth-child(4) {
+        grid-column: 2;
+        grid-row: 4;
+    }
+    
+    .container figure:nth-child(1) {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    .container figure:nth-child(2) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+    
+    .container figure:nth-child(3) {
+        grid-column: 1;
+        grid-row: 3;
+    }
+    
+    .container figure:nth-child(4) {
+        grid-column: 2;
+        grid-row: 4;
+    }
+    
+    .container figure:nth-child(5) {
+        grid-column: 1;
+        grid-row: 5;
+    }
+}
+
+/* Landscape Tablet view */
+@media only screen and (min-width: 768px) {
+    nav {
+        display: block;
+    }
+    nav > ul {
+        display: flex;
+        justify-content: space-around;
+    }
+    .pets-nav, .travels-nav, .foods-nav {
+        display: block;
+        background-image: none;
+        border-width: 15px;
+        border-style: solid;
+        border-image-source: url('../images/complete_site_bg.png');
+        border-image-slice: 10;
+        background-color: #fff0f0;
+        margin-top: 10px;
+        text-align: left;
+        justify-content: left;
+        padding-left: 20px;
+    }
+    .pets-nav > ul, .travels-nav > ul, .foods-nav > ul {
+        display: block;
+    }
+    .pets-nav li, .travels-nav li, .foods-nav li {
+        list-style-type:decimal;
+    }
+    .pets-nav a, .travels-nav a, .foods-nav a {
+        font-size: 20px;
+    }   
+    .container {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+    .container img {
+        grid-column: 1 / -1;
+        width: 100%;
+        height: auto;
+    }
+    .container img:nth-child(1) {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    .container img:nth-child(2) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+    
+    .container img:nth-child(3) {
+        grid-column: 1;
+        grid-row: 3;
+    }
+    
+    .container img:nth-child(4) {
+        grid-column: 2;
+        grid-row: 4;
+    }
+    
+    .container figure:nth-child(1) {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    .container figure:nth-child(2) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+    
+    .container figure:nth-child(3) {
+        grid-column: 1;
+        grid-row: 3;
+    }
+    
+    .container figure:nth-child(4) {
+        grid-column: 2;
+        grid-row: 4;
+    }
+    
+    .container figure:nth-child(5) {
+        grid-column: 1;
+        grid-row: 5;
+    }
+}
+
+/* Laptop or Desktop view */
+@media only screen and (min-width: 992px) {
+    nav {
+        display: block;
+    }
+    nav > ul {
+        display: flex;
+        justify-content: space-around;
+    }
+    .pets-nav, .travels-nav, .foods-nav {
+        display: block;
+        background-image: none;
+        border-width: 15px;
+        border-style: solid;
+        border-image-source: url('../images/complete_site_bg.png');
+        border-image-slice: 10;
+        background-color: #fff0f0;
+        margin-top: 10px;
+        text-align: left;
+        justify-content: left;
+        padding-left: 20px;
+    }
+    .pets-nav > ul, .travels-nav > ul, .foods-nav > ul {
+        display: block;
+    }
+    .pets-nav li, .travels-nav li, .foods-nav li {
+        list-style-type:decimal;
+    }
+    .pets-nav a, .travels-nav a, .foods-nav a {
+        font-size: 20px;
+    }
+    .ingredients-grid {
+        padding-left: 20px;
+        list-style-type: disc;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+    }
+    main {
+        padding-left: 30px;
+    }
+    .container {
+        display: inline-flex;
+        gap: 0;
+    }
+    .container img {
+        width: 25%;
+        height: 100%;
+    }
+    .travel {
+        display: inline-flex;
+    }
+    .travel img {
+        width: 300px;
+        height: auto;
+    }
+    .food img {
+        width: 33%;
+        height: 100%;
+    }
 }
